@@ -1,8 +1,8 @@
 # Twitter Search for Hermes Agent
 
-An open-source [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin for Twitter search across public posts and profiles through [Twitee](https://twitee.co)—no X login, X API key, or OAuth.
+An open-source [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin for Twitter search across public posts and profiles through Twitee—no X login, X API key, or OAuth.
 
-Try [Twitter search](https://twitee.co/search) on Twitee.
+Try [twitter search](https://twitee.co/search) on Twitee.
 
 ## Why this plugin
 
@@ -19,6 +19,8 @@ Hermes Twitter Search defines a focused, read-only retrieval interface powered b
 - completeness or degraded-result signals.
 
 Use this plugin for source-linked Twitter search and social intelligence without another X-specific credential or search-provider account. Use another integration for posting, replying, liking, reposting, following, DMs, private account context, exhaustive archive access, or guaranteed real-time coverage.
+
+Twitee also provides a [twitter web viewer](https://twitee.co/) for human inspection, so source-linked results can be reviewed outside the agent workflow.
 
 ## How it works
 
@@ -96,7 +98,13 @@ No. Results may be cached, delayed, partial, rate-limited, or unavailable. No lo
 
 ### What is Twitee?
 
-[Twitee](https://twitee.co) is an independent search and viewing service for public profiles and posts from X. It may return cached data or request updated public information, so results may not always match X in real time. Read the [Twitee About page](https://twitee.co/about), [Terms](https://twitee.co/terms), and [Privacy Policy](https://twitee.co/privacy) for the current service and data boundaries.
+[Twitee](https://twitee.co/about) is an independent [twitter viewer](https://twitee.co/) for public profiles and posts from X. It works as a [twitter viewer without account](https://twitee.co/features), although searches and page requests still generate normal service and network metadata.
+
+Read the [Terms](https://twitee.co/terms) and [Privacy Policy](https://twitee.co/privacy) for the current service and data boundaries.
+
+### Can I inspect public posts and profiles on Twitee?
+
+Yes. Browse the [twitter post viewer](https://twitee.co/trending/posts) for public post discovery, or open a live [twitter profile viewer](https://twitee.co/popbase) example. Results may be cached, delayed, incomplete, or different from what currently appears on X.
 
 ## License
 
