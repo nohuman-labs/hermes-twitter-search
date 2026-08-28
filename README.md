@@ -6,19 +6,19 @@ Try [Twitter search](https://twitee.co/search) on Twitee.
 
 ## Why this plugin
 
-Hermes already includes an [`x_search` tool](https://hermes-agent.nousresearch.com/docs/user-guide/features/x-search), but it requires either a SuperGrok/X Premium+ OAuth login or an `XAI_API_KEY`. It asks xAI to search Twitter/X and return a synthesized answer with citations; filtered searches can degrade to an unsourced response when no citations are found.
+Getting public Twitter evidence into Hermes should not require an X developer app, API key, OAuth flow, or persistent browser session.
 
-Hermes Twitter Search takes a different path: read-only access to structured public profile and post records through Twitee, without another X-specific credential or search-service account. It gives Hermes source-linked evidence for research and social intelligence while preserving freshness, pagination, and completeness signals.
+Hermes already includes an [X search tool (`x_search`)](https://hermes-agent.nousresearch.com/docs/user-guide/features/x-search) for Grok-synthesized research, but it requires xAI OAuth or an `XAI_API_KEY`. Authenticated tools such as [`xurl`](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/social-media/social-media-xurl) are built for raw X API access and account actions. Keyless alternatives also exist: remote MCP services require separate MCP configuration, while browser-based tools require a local browser runtime.
 
-Use it to:
+Hermes Twitter Search defines a focused, read-only retrieval interface powered by Twitee and packaged for the Hermes plugin system. The interface centers on structured public records instead of asking another model to summarize the search first:
 
-- search public Twitter profiles;
-- search public posts by keyword, hashtag, or mention;
-- resolve a public handle;
-- inspect public posts from a profile; and
-- preserve source and collection context while analyzing results.
+- public profiles and posts;
+- original source URLs;
+- collection and freshness context;
+- pagination state; and
+- completeness or degraded-result signals.
 
-It does not support posting, replying, liking, reposting, following, DMs, private data, exhaustive archive research, or guaranteed real-time monitoring.
+Use this plugin for source-linked Twitter search and social intelligence without another X-specific credential or search-provider account. Use another integration for posting, replying, liking, reposting, following, DMs, private account context, exhaustive archive access, or guaranteed real-time coverage.
 
 ## How it works
 
@@ -55,14 +55,16 @@ The result contract distinguishes original Twitter/X source URLs from Twitee lin
 
 ## Feature comparison
 
-| Option | Best for | Additional search credential | Result shape | Account writes |
-| --- | --- | --- | --- | --- |
-| This plugin via Twitee | Public profile and post records with explicit freshness | None for Twitter search | Structured records and source links | No |
-| Hermes X search ([`x_search`](https://hermes-agent.nousresearch.com/docs/user-guide/features/x-search)) | Broad, Grok-synthesized Twitter research | xAI OAuth or `XAI_API_KEY` | Synthesized answer and citations; filtered results may degrade | No |
-| Hermes [`xurl`](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/social-media/social-media-xurl) | Authenticated X API reads and account actions | X developer app and account OAuth | Authenticated API output | Yes |
-| [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet) / [Hermes XAPI](https://github.com/twexapi-dev/hermes-xapi) | Provider-specific read, monitoring, and action catalogs | `XQUIK_API_KEY` / `TWEXAPI_KEY` for live reads | Provider-specific structured endpoints | Available behind explicit gates |
+| Option | Best fit | Additional setup or credentials | Result and action model |
+| --- | --- | --- | --- |
+| **Hermes Twitter Search via Twitee** | Structured public profile and post evidence through a native Hermes plugin | No additional X-specific login, API key, OAuth, browser session, or search-provider account; normal Hermes model setup still applies | Structured-record contract with source, freshness, pagination, and completeness context; read-only |
+| Hermes [`x_search`](https://hermes-agent.nousresearch.com/docs/user-guide/features/x-search) | Broad Twitter research synthesized by Grok | SuperGrok/X Premium+ OAuth or `XAI_API_KEY` | Synthesized answer and citations when available; no writes |
+| Hermes [`xurl`](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/social-media/social-media-xurl) | Exact official X API reads and authenticated account actions | X developer app credentials and account OAuth | Raw authenticated API output; supports writes |
+| [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet) / [Hermes XAPI](https://github.com/twexapi-dev/hermes-xapi) | Provider-backed reads, monitoring, and gated actions | `XQUIK_API_KEY` / `TWEXAPI_KEY` for live reads | Provider-specific structured endpoints; actions available behind explicit gates |
+| [x-mcp](https://github.com/kandotrun/x-mcp) | Generic public, read-only retrieval across MCP clients | Remote MCP and skill configuration in Hermes | Structured MCP tools; no account writes |
+| [Twitter MCP](https://github.com/Miles0sage/twitter-mcp) | Local browser-based reads and account actions | Playwright/Chromium runtime; persistent browser login for account-specific operations | Browser-derived records; supports writes after login |
 
-Choose this plugin when you need structured public records and explicit freshness without additional xAI or Twitter-search-provider credentials. Prefer `x_search` for Grok-synthesized Twitter research, and use `xurl` or another authenticated integration for account-specific reads and writes.
+Choose Hermes Twitter Search for structured Twitee records inside Hermes without additional X-specific or xAI search credentials. Choose `x_search` for Grok synthesis, `xurl` for official authenticated X API objects or confirmed writes, Hermes Tweet/XAPI for provider-backed monitoring or gated actions, `x-mcp` for a generic remote MCP across clients, and Twitter MCP for a local Playwright workflow.
 
 ## Installation
 
