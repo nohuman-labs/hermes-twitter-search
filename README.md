@@ -1,10 +1,10 @@
 # Hermes Twitter Search for Hermes Agent
 
-An open-source [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin in development for Twitter search across public posts and profiles through [Twitee](https://twitee.co/search)—no X login, X API key, or OAuth.
+An open-source [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin in development for Twitter search across public posts and profiles through [Twitee](https://twitee.co)—no X login, X API key, or OAuth.
 
 > **Status: not installable yet.** The V1 tool contract and Hermes plugin package are under development. No working release or installation command has been published.
 
-[Try Twitter search on Twitee](https://twitee.co/search)
+Try [Twitter search](https://twitee.co/search) on Twitee.
 
 ## Why this plugin
 
@@ -135,7 +135,7 @@ No. Results may be cached, delayed, partial, rate-limited, or unavailable. Norma
 
 ### What is Twitee?
 
-[Twitee](https://twitee.co) is the public Twitter search and viewing service intended to supply this plugin's search results. You can [try Twitter search on Twitee](https://twitee.co/search) without an X account.
+[Twitee](https://twitee.co) is the public Twitter search and viewing service intended to supply this plugin's search results. You can use it directly without an X account.
 
 ## Project status
 
