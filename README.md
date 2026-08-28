@@ -1,4 +1,4 @@
-# Hermes Twitter Search for Hermes Agent
+# Twitter Search for Hermes Agent
 
 An open-source [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin in development for Twitter search across public posts and profiles through [Twitee](https://twitee.co)—no X login, X API key, or OAuth.
 
