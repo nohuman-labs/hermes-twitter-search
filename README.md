@@ -104,7 +104,7 @@ Read the [Terms](https://twitee.co/terms) and [Privacy Policy](https://twitee.co
 
 ### Can I inspect public posts and profiles on Twitee?
 
-Yes. Browse the [twitter post viewer](https://twitee.co/trending/posts) for public post discovery, or open a live [twitter profile viewer](https://twitee.co/popbase) example. Results may be cached, delayed, incomplete, or different from what currently appears on X.
+Yes. Browse the [twitter post viewer](https://twitee.co/trending/posts) for public post discovery, or use this live [twitter profile viewer](https://twitee.co/thsottiaux) to inspect Tibo's public posts about Codex resets. Results may be cached, delayed, incomplete, or different from what currently appears on X.
 
 ## License
 
